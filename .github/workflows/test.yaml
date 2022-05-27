@@ -1,0 +1,17 @@
+name: unit-tests
+on:
+  push:
+    branches: [master,dev]
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    - user: actions/checkout@2
+    - name: Use Node-js 14.x
+      uses: actions/checkout@2
+      with: 
+        node-version: 14.x
+    -run: npm ci
+    -run: npm test
